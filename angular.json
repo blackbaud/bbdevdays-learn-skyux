@@ -25,6 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "@skyux/ag-grid/css/sky-ag-grid.css",
               "@skyux/theme/css/sky.css",
               "@skyux/theme/css/themes/modern/styles.css",
               "src/styles.scss"
@@ -94,6 +95,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "@skyux/ag-grid/css/sky-ag-grid.css",
               "@skyux/theme/css/sky.css",
               "@skyux/theme/css/themes/modern/styles.css",
               "src/styles.scss"
