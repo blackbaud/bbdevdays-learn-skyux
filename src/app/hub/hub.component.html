@@ -1,0 +1,15 @@
+<sky-action-hub
+  [needsAttention]="(needsAttention | async) ?? []"
+  [relatedLinks]="relatedLinks"
+  [title]="title">
+  <sky-action-hub-content>
+    <sky-box>
+      <sky-box-header>
+        <h2>Welcome to SKY UX</h2>
+      </sky-box-header>
+      <sky-box-content>
+        <app-welcome-to-skyux />
+      </sky-box-content>
+    </sky-box>
+  </sky-action-hub-content>
+</sky-action-hub>
