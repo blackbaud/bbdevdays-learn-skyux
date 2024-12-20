@@ -1,0 +1,80 @@
+<ng-template #contextMenuTemplate let-row="row">
+  <sky-dropdown buttonType="context-menu" label="Code example context menu">
+    <sky-dropdown-menu>
+      <sky-dropdown-item>
+        <button type="button" (click)="onViewClick(row.id, row.name)">
+          <sky-icon icon="open" />
+          View
+        </button>
+      </sky-dropdown-item>
+      <sky-dropdown-item>
+        <button type="button" (click)="onEditClick(row.id)">
+          <sky-icon icon="edit" />
+          Edit
+        </button>
+      </sky-dropdown-item>
+      <sky-dropdown-item>
+        <button type="button" (click)="onDeleteClick(row.id)">
+          <sky-icon icon="trash" />
+          Delete
+        </button>
+      </sky-dropdown-item>
+    </sky-dropdown-menu>
+  </sky-dropdown>
+</ng-template>
+
+<ng-template #avatarTemplate let-row="row">
+  <div class="image-column">
+    <sky-avatar
+      [name]="row.name"
+      [src]="(row.images.length && row.images[0].url) || undefined"
+      size="small" />
+  </div>
+</ng-template>
+
+<ng-template #linkTemplate let-value="value" let-row="row">
+  <button
+    type="button"
+    class="sky-btn sky-btn-link-inline link-column"
+    (click)="onViewClick(row.id, row.name)">
+    {{ value }}
+  </button>
+</ng-template>
+
+<sky-page layout="list">
+  <sky-wait [isWaiting]="loading()" />
+  <sky-page-header [pageTitle]="settings.title" [parentLink]="parentLink" />
+  <sky-page-content>
+    <sky-data-manager>
+      <sky-data-manager-toolbar>
+        <sky-data-manager-toolbar-primary-item>
+          <button
+            type="button"
+            class="sky-btn sky-btn-default"
+            (click)="onEditClick()">
+            <sky-icon icon="add" />
+            New
+          </button>
+        </sky-data-manager-toolbar-primary-item>
+        <sky-data-manager-toolbar-right-item>
+          <button
+            type="button"
+            class="sky-btn sky-btn-default"
+            (click)="onReset()">
+            <sky-icon icon="trash" />
+            Reset data
+          </button>
+        </sky-data-manager-toolbar-right-item>
+      </sky-data-manager-toolbar>
+      <sky-data-view skyAgGridDataManagerAdapter viewId="gridView">
+        <sky-ag-grid-wrapper
+          skyAgGridRowDelete
+          [(rowDeleteIds)]="rowDeleteIds"
+          (rowDeleteCancel)="rowDeleteCancel($event)"
+          (rowDeleteConfirm)="rowDeleteConfirm($event)">
+          <ag-grid-angular [gridOptions]="gridOptions" [rowData]="data()" />
+        </sky-ag-grid-wrapper>
+      </sky-data-view>
+    </sky-data-manager>
+  </sky-page-content>
+</sky-page>
