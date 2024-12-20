@@ -1,0 +1,17 @@
+<sky-page layout="list">
+  <sky-page-header [pageTitle]="settings.title" [parentLink]="parentLink">
+    <sky-page-header-actions>
+      <a routerLink="../.." class="sky-btn sky-btn-default">
+        <sky-icon icon="chevron-left" />
+        Back
+      </a>
+      <button class="sky-btn sky-btn-default" type="button" (click)="edit()">
+        <sky-icon icon="edit" />
+        Edit
+      </button>
+    </sky-page-header-actions>
+  </sky-page-header>
+  <sky-page-content>
+    <ng-template [cdkPortalOutlet]="viewPortal" />
+  </sky-page-content>
+</sky-page>
