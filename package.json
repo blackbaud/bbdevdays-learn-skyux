@@ -1,0 +1,82 @@
+{
+  "name": "bark-back",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.0",
+    "@angular/cdk": "^18.0.0",
+    "@angular/common": "^18.2.0",
+    "@angular/compiler": "^18.2.0",
+    "@angular/core": "^18.2.0",
+    "@angular/forms": "^18.2.0",
+    "@angular/platform-browser": "^18.2.0",
+    "@angular/platform-browser-dynamic": "^18.2.0",
+    "@angular/router": "^18.2.0",
+    "@skyux-sdk/testing": "11.30.1",
+    "@skyux/ag-grid": "11.30.1",
+    "@skyux/animations": "11.30.1",
+    "@skyux/assets": "^11.30.1",
+    "@skyux/autonumeric": "11.30.1",
+    "@skyux/avatar": "11.30.1",
+    "@skyux/core": "^11.30.1",
+    "@skyux/data-manager": "11.30.1",
+    "@skyux/datetime": "11.30.1",
+    "@skyux/flyout": "11.30.1",
+    "@skyux/forms": "11.30.1",
+    "@skyux/i18n": "^11.30.1",
+    "@skyux/indicators": "11.30.1",
+    "@skyux/inline-form": "11.30.1",
+    "@skyux/layout": "11.30.1",
+    "@skyux/lookup": "11.30.1",
+    "@skyux/modals": "11.30.1",
+    "@skyux/packages": "11.30.1",
+    "@skyux/pages": "11.30.1",
+    "@skyux/theme": "^11.30.1",
+    "rxjs": "~7.8.0",
+    "tslib": "2.8.1",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.12",
+    "@angular/cli": "^18.2.12",
+    "@angular/compiler-cli": "^18.2.0",
+    "@skyux-sdk/eslint-config": "11.30.1",
+    "@types/jasmine": "5.1.5",
+    "angular-eslint": "18.4.3",
+    "eslint": "9.17.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "jasmine-core": "5.5.0",
+    "karma": "6.4.4",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "2.2.1",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "3.4.2",
+    "prettier-eslint": "16.3.0",
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.19.0"
+  },
+  "overrides": {
+    "ng2-dragula@5.1.0": {
+      "@angular/animations": ">=16.0.0 <19.0.0",
+      "@angular/core": ">=16.0.0 <19.0.0",
+      "@angular/common": ">=16.0.0 <19.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackbaud/bbdevdays-learn-skyux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackbaud/skyux/issues"
+  }
+}
