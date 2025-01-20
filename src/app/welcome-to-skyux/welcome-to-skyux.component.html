@@ -1,0 +1,32 @@
+<sky-alert alertType="warning"
+  >Training content is currently under development.</sky-alert
+>
+
+<p class="sky-font-body-lg">
+  SKY UX is a design system for web applications. It provides a collection of
+  reusable HTML, CSS, and JavaScript components that can be used to build
+  modern, responsive web applications. SKY UX includes a set of CSS stylesheets
+  and patterns for use in any web project, as well as a set of reusable Angular
+  components.
+</p>
+
+<p>
+  “Bark Back” is a fictional animal shelter that demonstrates using SKY UX
+  components to build a web application. The application includes a list of
+  animals that are available for adoption. The application allows users to view
+  details about each animal, add new animals, and edit or delete existing
+  animals. The application also includes a hub page that provides quick access
+  to related links and important information.
+</p>
+
+<sky-action-button-container>
+  @for (action of actions; track action.heading) {
+    <sky-action-button [permalink]="action.link">
+      <sky-action-button-icon [iconType]="action.icon" />
+      <sky-action-button-header>{{ action.heading }}</sky-action-button-header>
+      <sky-action-button-details>{{
+        action.details
+      }}</sky-action-button-details>
+    </sky-action-button>
+  }
+</sky-action-button-container>
