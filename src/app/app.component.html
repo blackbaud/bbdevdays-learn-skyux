@@ -1,4 +1,5 @@
-<div class="sky-padding-even-md">
-  <app-welcome-to-skyux />
-</div>
+@if (environment.production) {
+  <div id="gh"><a [attr.href]="environment.ghLink">View on GitHub</a></div>
+}
+
 <router-outlet />
