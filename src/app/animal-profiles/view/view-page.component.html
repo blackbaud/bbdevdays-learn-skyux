@@ -1,0 +1,21 @@
+<sky-page layout="list">
+  <sky-page-header pageTitle="Animal Profiles" [parentLink]="parentLink">
+    <sky-page-header-actions>
+      <a routerLink="../.." class="sky-btn sky-btn-default">
+        <sky-icon iconName="chevron-left" />
+        Back
+      </a>
+      <button
+        data-button-id="edit"
+        class="sky-btn sky-btn-default"
+        type="button"
+        (click)="edit()">
+        <sky-icon iconName="edit" />
+        Edit
+      </button>
+    </sky-page-header-actions>
+  </sky-page-header>
+  <sky-page-content>
+    <app-view [id]="id() ?? ''" />
+  </sky-page-content>
+</sky-page>
