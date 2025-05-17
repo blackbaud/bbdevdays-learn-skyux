@@ -35,6 +35,7 @@
               }
             ],
             "styles": [
+              "@skyux/ag-grid/css/sky-ag-grid.css",
               "@skyux/theme/css/sky.css",
               "@skyux/theme/css/themes/modern/styles.css",
               "src/styles.scss"
@@ -113,6 +114,7 @@
               }
             ],
             "styles": [
+              "@skyux/ag-grid/css/sky-ag-grid.css",
               "@skyux/theme/css/sky.css",
               "@skyux/theme/css/themes/modern/styles.css",
               "src/styles.scss"
