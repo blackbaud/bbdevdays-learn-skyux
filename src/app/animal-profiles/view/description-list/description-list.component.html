@@ -1,0 +1,16 @@
+<sky-box class="sky-margin-stacked-xl">
+  <sky-box-content>
+    <sky-description-list>
+      @for (item of items(); track item.term()) {
+        <sky-description-list-content>
+          <sky-description-list-term>{{
+            item.term()
+          }}</sky-description-list-term>
+          <sky-description-list-description>{{
+            item.description()
+          }}</sky-description-list-description>
+        </sky-description-list-content>
+      }
+    </sky-description-list>
+  </sky-box-content>
+</sky-box>
