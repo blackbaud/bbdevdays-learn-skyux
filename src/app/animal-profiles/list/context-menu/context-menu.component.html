@@ -1,0 +1,36 @@
+<sky-dropdown
+  data-sky-id="dropdown"
+  buttonType="context-menu"
+  [label]="params?.data?.name + ' context menu'">
+  <sky-dropdown-menu>
+    <sky-dropdown-item>
+      <button
+        type="button"
+        (click)="
+          list.onViewClick(params?.data?.id ?? '', params?.data?.name ?? '')
+        "
+        [attr.aria-label]="'View ' + params?.data?.name">
+        <sky-icon iconName="open" />
+        View
+      </button>
+    </sky-dropdown-item>
+    <sky-dropdown-item>
+      <button
+        type="button"
+        (click)="list.onEditClick(params?.data?.id ?? '')"
+        [attr.aria-label]="'Edit ' + params?.data?.name">
+        <sky-icon iconName="edit" />
+        Edit
+      </button>
+    </sky-dropdown-item>
+    <sky-dropdown-item>
+      <button
+        type="button"
+        (click)="list.onDeleteClick(params?.data?.id ?? '')"
+        [attr.aria-label]="'Delete ' + params?.data?.name">
+        <sky-icon iconName="delete" />
+        Delete
+      </button>
+    </sky-dropdown-item>
+  </sky-dropdown-menu>
+</sky-dropdown>
