@@ -1,0 +1,257 @@
+[
+  {
+    "id": "1c99cfda-5a69-4a55-b880-21f8791f106c",
+    "createdAt": "2022-07-13T09:21:43.440Z",
+    "updatedAt": "2022-08-02T09:21:43.440Z",
+    "name": "Badger",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2022-05-02T09:21:43.440Z",
+    "breed": "Mixed",
+    "needsAttention": true,
+    "images": [
+      {
+        "alt": "Badger",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Badger.png"
+      }
+    ]
+  },
+  {
+    "id": "0c38147b-9f61-4b51-acac-1bc5539a418f",
+    "createdAt": "2022-02-27T09:21:43.484Z",
+    "updatedAt": "2022-05-17T09:21:43.484Z",
+    "name": "Bailey",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2022-02-11T09:21:43.484Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Bailey",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Bailey.png"
+      }
+    ]
+  },
+  {
+    "id": "2d6f72a6-abb0-4edb-b84d-358d1cc5a0be",
+    "createdAt": "2023-02-17T09:21:43.484Z",
+    "updatedAt": "2023-05-16T09:21:43.484Z",
+    "name": "Bear",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2023-02-07T09:21:43.484Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Bear",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Bear.png"
+      }
+    ]
+  },
+  {
+    "id": "3097e4d1-5061-44ee-8e12-d65a68f7981d",
+    "createdAt": "2022-07-16T09:21:43.484Z",
+    "updatedAt": "2022-08-26T09:21:43.484Z",
+    "name": "Bella",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2022-05-19T09:21:43.484Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Bella",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Bella.png"
+      }
+    ]
+  },
+  {
+    "id": "dd8921ee-cab3-4395-981d-8e81bbf3bd2d",
+    "createdAt": "2024-09-25T09:21:43.484Z",
+    "updatedAt": "2024-11-18T09:21:43.484Z",
+    "name": "Buddy",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2024-08-14T09:21:43.484Z",
+    "breed": "Mixed",
+    "needsAttention": true,
+    "images": [
+      {
+        "alt": "Buddy",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Buddy.png"
+      }
+    ]
+  },
+  {
+    "id": "d9a388df-4828-445c-a30b-fecac688330b",
+    "createdAt": "2024-08-04T09:21:43.484Z",
+    "updatedAt": "2024-09-21T09:21:43.484Z",
+    "name": "Charlie",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2024-06-21T09:21:43.484Z",
+    "breed": "Mixed",
+    "needsAttention": true,
+    "images": [
+      {
+        "alt": "Charlie",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Charlie.png"
+      }
+    ]
+  },
+  {
+    "id": "d1c67a89-9ed1-47e6-9dce-d333850a36b7",
+    "createdAt": "2024-01-27T09:21:43.485Z",
+    "updatedAt": "2024-03-23T09:21:43.485Z",
+    "name": "Daisy",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2023-12-18T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Daisy",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Daisy.png"
+      }
+    ]
+  },
+  {
+    "id": "686e2c1d-1862-44a1-b8e4-f3f0948311b1",
+    "createdAt": "2023-12-01T09:21:43.485Z",
+    "updatedAt": "2024-02-17T09:21:43.485Z",
+    "name": "Duke",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2023-11-17T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Duke",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Duke.png"
+      }
+    ]
+  },
+  {
+    "id": "310cc04e-647c-46dc-b205-7a9fcab6e27e",
+    "createdAt": "2023-08-21T09:21:43.485Z",
+    "updatedAt": "2023-11-20T09:21:43.485Z",
+    "name": "Lola",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2023-08-14T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": true,
+    "images": [
+      {
+        "alt": "Lola",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Lola.png"
+      }
+    ]
+  },
+  {
+    "id": "f5438bc9-c771-4f89-ad4b-5adc074124d9",
+    "createdAt": "2023-02-24T09:21:43.485Z",
+    "updatedAt": "2023-03-26T09:21:43.485Z",
+    "name": "Lucy",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2022-12-19T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Lucy",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Lucy.png"
+      }
+    ]
+  },
+  {
+    "id": "20e76833-8942-4d0e-a6c2-defdee2e0757",
+    "createdAt": "2023-02-19T09:21:43.485Z",
+    "updatedAt": "2023-04-12T09:21:43.485Z",
+    "name": "Luna",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2023-01-07T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Luna",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Luna.png"
+      }
+    ]
+  },
+  {
+    "id": "94ce4f63-a19d-47a9-a935-530384dc4226",
+    "createdAt": "2023-08-16T09:21:43.485Z",
+    "updatedAt": "2023-08-27T09:21:43.485Z",
+    "name": "Maggie",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2023-05-27T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Maggie",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Maggie.png"
+      }
+    ]
+  },
+  {
+    "id": "d847b869-2646-4fc3-b845-bc14197ab154",
+    "createdAt": "2023-05-24T09:21:43.485Z",
+    "updatedAt": "2023-07-01T09:21:43.485Z",
+    "name": "Max",
+    "bio": "",
+    "gender": "Male",
+    "birthdate": "2023-03-23T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Max",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Max.png"
+      }
+    ]
+  },
+  {
+    "id": "edbceb98-ee02-47e6-ba0e-44525617a81d",
+    "createdAt": "2024-10-10T09:21:43.485Z",
+    "updatedAt": "2025-01-09T09:21:43.485Z",
+    "name": "Molly",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2024-10-08T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": false,
+    "images": [
+      {
+        "alt": "Molly",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Molly.png"
+      }
+    ]
+  },
+  {
+    "id": "f386bb77-9702-4aa4-934a-9bfa5d01ea1e",
+    "createdAt": "2022-06-29T09:21:43.485Z",
+    "updatedAt": "2022-07-28T09:21:43.485Z",
+    "name": "Sadie",
+    "bio": "",
+    "gender": "Female",
+    "birthdate": "2022-04-24T09:21:43.485Z",
+    "breed": "Mixed",
+    "needsAttention": true,
+    "images": [
+      {
+        "alt": "Sadie",
+        "url": "https://blackbaud.github.io/bbdevdays-learn-skyux/images/Sadie.png"
+      }
+    ]
+  }
+]
