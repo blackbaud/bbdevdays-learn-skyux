@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { ViewComponent } from './animal-profiles/view/view.component';
-
 export const routes: Routes = [
   {
     path: '',
@@ -10,6 +8,6 @@ export const routes: Routes = [
   },
   {
     path: 'animal-profiles/view/:id',
-    component: ViewComponent,
+    loadComponent: () => import('./animal-profiles/view/view-page.component'),
   },
 ];
