@@ -1,0 +1,65 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: 'ci'
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    strategy:
+      matrix:
+        branch:
+          - 01-create-project
+          - 02-create-http-service
+          - 03-create-view
+          - 04-create-form
+          - 05-data-grid
+          - 06-action-hub
+          - github-pages
+    name: '${{ matrix.branch }} branch'
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ matrix.branch == 'github-pages' && matrix.branch || null }}
+      url: ${{ matrix.branch == 'github-pages' && steps.deployment.outputs.page_url || null }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          lfs: true
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build -- --base-href=/${GITHUB_REPOSITORY#*/}/
+      - name: Test
+        run: npm run test:ci
+      - name: Setup Pages
+        if: matrix.branch == 'github-pages'
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages artifact
+        if: matrix.branch == 'github-pages'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/bark-back/browser
+      - name: Deploy to GitHub Pages
+        if: matrix.branch == 'github-pages'
+        id: deployment
+        uses: actions/deploy-pages@v4
