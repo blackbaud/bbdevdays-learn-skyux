@@ -1,0 +1,66 @@
+@if (dataOrUndefined(); as data) {
+  <sky-fluid-grid [disableMargin]="disableMargin()">
+    <sky-row>
+      <sky-column [screenMedium]="12">
+        <header class="sky-margin-stacked-xl">
+          @if (data.images[0]; as image) {
+            <sky-avatar [name]="data.name" [src]="image.url" />
+          } @else {
+            <sky-avatar [name]="data.name" />
+          }
+          <div>
+            <h2>{{ data.name }}</h2>
+            @if (data.needsAttention) {
+              <sky-alert alertType="warning">
+                This animal needs attention!
+              </sky-alert>
+            }
+          </div>
+        </header>
+      </sky-column>
+    </sky-row>
+    <sky-row>
+      <sky-column [screenMedium]="6">
+        <app-description-list>
+          <app-description-list-item
+            term="Breed"
+            [description]="data.breed || 'N/A'" />
+          <app-description-list-item
+            term="Gender"
+            [description]="data.gender || 'N/A'" />
+          <app-description-list-item
+            term="Age"
+            [description]="data.birthdate | age" />
+        </app-description-list>
+      </sky-column>
+      @if (data.bio) {
+        <sky-column [screenMedium]="6">
+          <sky-box
+            class="sky-margin-stacked-xl"
+            headingText="Bio"
+            headingLevel="4"
+            headingStyle="4"
+            data-sky-id="bio">
+            <sky-box-content>
+              <div class="bio-text">{{ data.bio }}</div>
+            </sky-box-content>
+          </sky-box>
+        </sky-column>
+      }
+    </sky-row>
+    <sky-row>
+      <sky-column [screenSmall]="8" [screenLarge]="6">
+        <app-description-list mode="horizontal">
+          <app-description-list-item
+            term="Created"
+            [description]="data.createdAt | skyDate" />
+          <app-description-list-item
+            term="Last updated"
+            [description]="data.updatedAt | skyDate" />
+        </app-description-list>
+      </sky-column>
+    </sky-row>
+  </sky-fluid-grid>
+} @else {
+  <sky-error errorType="notfound" />
+}
