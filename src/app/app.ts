@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-import { WelcomeToSkyux } from './welcome-to-skyux/welcome-to-skyux';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WelcomeToSkyux],
+  imports: [RouterOutlet],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {}
+export class App {
+  protected readonly devMode = isDevMode();
+}
