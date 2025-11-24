@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.animal-profiles-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.animal-profiles-list sky-data-view {
+  flex: 1;
+}
+
+.image-column {
+  height: var(--ag-row-height);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-column {
+  vertical-align: middle;
+}
+
+.needs-attention-not-starred {
+  visibility: hidden;
+}
+.link-column:hover > .needs-attention-not-starred {
+  opacity: 0.5;
+  visibility: visible;
+}
