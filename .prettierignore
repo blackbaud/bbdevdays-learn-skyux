@@ -1,0 +1,7 @@
+# Ignore artifacts:
+/coverage
+/dist
+/node_modules
+
+# Ignore Angular cache
+/.angular/cache
