@@ -1,0 +1,37 @@
+{
+  "name": "SKY UX Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-extra/features/angular-cli:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "cSpell.words": ["autonumeric", "dbaeumer", "devcontainers", "esbenp", "skyux"],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "prettier.requireConfig": true
+      },
+      "extensions": [
+        "angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "forwardPorts": [4200],
+  "portsAttributes": {
+    "4200": {
+      "label": "ng serve",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "git fetch --all && npm install && npm start"
+}

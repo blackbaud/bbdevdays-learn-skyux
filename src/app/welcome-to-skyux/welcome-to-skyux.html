@@ -1,0 +1,53 @@
+<sky-alert alertType="warning">Training content is currently under development.</sky-alert>
+
+<p class="sky-font-body-lg">
+  SKY UX is a design system for web applications. It provides a collection of reusable HTML, CSS,
+  and JavaScript components that can be used to build modern, responsive web applications. SKY UX
+  includes a set of CSS stylesheets and patterns for use in any web project, as well as a set of
+  reusable Angular components.
+</p>
+
+<p>
+  “Bark Back” is a fictional animal shelter that demonstrates using SKY UX components to build a web
+  application. The application includes a list of animals that are available for adoption. The
+  application allows users to view details about each animal, add new animals, and edit or delete
+  existing animals. The application also includes a hub page that provides quick access to related
+  links and important information.
+</p>
+
+<sky-action-button-container>
+  <sky-action-button [permalink]="{ url: 'https://developer.blackbaud.com/' }">
+    <sky-action-button-icon iconName="wrench-screwdriver" />
+    <sky-action-button-header>Join Blackbaud SKY Developer Community</sky-action-button-header>
+    <sky-action-button-details>
+      Find the tools and partners to integrate with Blackbaud's platform.</sky-action-button-details
+    >
+  </sky-action-button>
+  <sky-action-button [permalink]="{ url: 'https://developer.blackbaud.com/skyux/' }">
+    <sky-action-button-icon iconName="question-circle" />
+    <sky-action-button-header>Learn More about SKY UX</sky-action-button-header>
+    <sky-action-button-details
+      >The documentation site includes design principles and code
+      examples.</sky-action-button-details
+    >
+  </sky-action-button>
+  <sky-action-button [permalink]="{ url: 'https://angular.dev/tutorials/learn-angular' }">
+    <sky-action-button-icon iconName="link" />
+    <sky-action-button-header>Learn Angular</sky-action-button-header>
+    <sky-action-button-details
+      >Angular provides a browser-based learning environment.</sky-action-button-details
+    >
+  </sky-action-button>
+  <sky-action-button
+    [permalink]="{
+      url: 'https://developer.blackbaud.com/skyux/learn/overview',
+    }"
+  >
+    <sky-action-button-icon iconName="online-learning" />
+    <sky-action-button-header>Get Started with SKY UX</sky-action-button-header>
+    <sky-action-button-details
+      >Explore the design principles and developer tools for working with SKY
+      UX.</sky-action-button-details
+    ></sky-action-button
+  >
+</sky-action-button-container>
