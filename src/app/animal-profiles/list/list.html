@@ -1,0 +1,67 @@
+<ng-template #avatarTemplate let-row="row">
+  <div class="image-column">
+    <sky-avatar
+      [name]="row.name"
+      [src]="(row.images.length && row.images[0].url) || undefined"
+      size="small"
+    />
+  </div>
+</ng-template>
+
+<ng-template #starTemplate let-value="value" let-row="row">
+  <button
+    type="button"
+    class="sky-btn sky-btn-link-inline link-column"
+    [attr.title]="value ? 'Needs attention' : 'Click to mark as needing attention'"
+    (click)="toggleNeedsAttention(row)"
+  >
+    <sky-icon [class.needs-attention-not-starred]="!value" iconName="star" />
+  </button>
+</ng-template>
+
+<ng-template #linkTemplate let-value="value" let-row="row">
+  <button
+    type="button"
+    class="sky-btn sky-btn-link-inline link-column"
+    (click)="onViewClick(row.id, row.name)"
+  >
+    {{ value }}
+  </button>
+</ng-template>
+
+<sky-page layout="fit">
+  <sky-page-header pageTitle="Animal Profiles" [parentLink]="parentLink" />
+  <sky-page-content>
+    <sky-data-manager>
+      <div class="animal-profiles-list sky-padding-horizontal-md">
+        <sky-data-manager-toolbar>
+          <sky-data-manager-toolbar-primary-item>
+            <button type="button" class="sky-btn sky-btn-default" (click)="onEditClick()">
+              <sky-icon iconName="add" />
+              New
+            </button>
+          </sky-data-manager-toolbar-primary-item>
+          <sky-data-manager-toolbar-right-item>
+            <button type="button" class="sky-btn sky-btn-default reset-data" (click)="onReset()">
+              <sky-icon iconName="delete" />
+              Reset data
+            </button>
+          </sky-data-manager-toolbar-right-item>
+        </sky-data-manager-toolbar>
+        <sky-data-view skyAgGridDataManagerAdapter viewId="gridView">
+          @defer (when !loading()) {
+            <sky-ag-grid-wrapper
+              skyAgGridRowDelete
+              [(rowDeleteIds)]="rowDeleteIds"
+              (rowDeleteConfirm)="rowDeleteConfirm($event)"
+            >
+              <ag-grid-angular [gridOptions]="gridOptions" (gridReady)="gridReady($event)" />
+            </sky-ag-grid-wrapper>
+          } @placeholder {
+            <sky-wait />
+          }
+        </sky-data-view>
+      </div>
+    </sky-data-manager>
+  </sky-page-content>
+</sky-page>

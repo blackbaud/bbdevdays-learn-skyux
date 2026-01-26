@@ -1,0 +1,50 @@
+@if (params()?.data; as row) {
+  <sky-dropdown
+    data-sky-id="context-menu"
+    buttonType="context-menu"
+    [label]="row.name + ' context menu'"
+  >
+    <sky-dropdown-menu>
+      <sky-dropdown-item>
+        <button
+          type="button"
+          (click)="list.toggleNeedsAttention(row)"
+          [attr.aria-label]="'Toggle needs-attention for ' + row.name"
+        >
+          <sky-icon iconName="star" />
+          Toggle needs-attention
+        </button>
+      </sky-dropdown-item>
+      <sky-dropdown-item>
+        <button
+          type="button"
+          (click)="list.onViewClick(row.id, row.name)"
+          [attr.aria-label]="'View ' + row.name"
+        >
+          <sky-icon iconName="open" />
+          View
+        </button>
+      </sky-dropdown-item>
+      <sky-dropdown-item>
+        <button
+          type="button"
+          (click)="list.onEditClick(row.id)"
+          [attr.aria-label]="'Edit ' + row.name"
+        >
+          <sky-icon iconName="edit" />
+          Edit
+        </button>
+      </sky-dropdown-item>
+      <sky-dropdown-item>
+        <button
+          type="button"
+          (click)="list.onDeleteClick(row.id)"
+          [attr.aria-label]="'Delete ' + row.name"
+        >
+          <sky-icon iconName="delete" />
+          Delete
+        </button>
+      </sky-dropdown-item>
+    </sky-dropdown-menu>
+  </sky-dropdown>
+}
