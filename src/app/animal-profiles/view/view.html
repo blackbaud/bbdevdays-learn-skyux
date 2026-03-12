@@ -1,0 +1,84 @@
+@if (dataOrUndefined(); as data) {
+  <sky-page layout="blocks">
+    <sky-page-header [parentLink]="parentLink" [pageTitle]="data.name">
+      @if (data.needsAttention) {
+        <sky-page-header-alerts>
+          <sky-alert alertType="warning"> This animal needs attention! </sky-alert>
+        </sky-page-header-alerts>
+      }
+      <sky-page-header-avatar>
+        @if (data.images[0]; as image) {
+          <sky-avatar [name]="data.name" [src]="image.url" />
+        } @else {
+          <sky-avatar [name]="data.name" />
+        }
+      </sky-page-header-avatar>
+      <sky-page-header-actions>
+        @if (linkToView) {
+          <button
+            class="sky-btn sky-btn-default sky-margin-inline-lg"
+            type="button"
+            [routerLink]="['animal-profiles', 'view', data.id]"
+          >
+            View
+          </button>
+        } @else {
+          <a routerLink="../.." class="sky-btn sky-btn-default" aria-label="Back to the list">
+            <sky-icon iconName="chevron-left" />
+            Back
+          </a>
+        }
+        <button
+          data-button-id="edit"
+          class="sky-btn sky-btn-default"
+          type="button"
+          (click)="edit?.(data.id)"
+        >
+          <sky-icon iconName="edit" />
+          Edit
+        </button>
+      </sky-page-header-actions>
+    </sky-page-header>
+    <sky-page-content>
+      <sky-fluid-grid [disableMargin]="true">
+        <sky-row>
+          <sky-column [screenMedium]="6">
+            <app-description-list>
+              <app-description-list-item term="Breed" [description]="data.breed || 'N/A'" />
+              <app-description-list-item term="Gender" [description]="data.gender || 'N/A'" />
+              <app-description-list-item term="Age" [description]="data.birthdate | age" />
+            </app-description-list>
+          </sky-column>
+          @if (data.bio) {
+            <sky-column [screenMedium]="6">
+              <sky-box
+                class="sky-margin-stacked-xl"
+                headingText="Bio"
+                headingLevel="4"
+                headingStyle="4"
+                data-sky-id="bio"
+              >
+                <sky-box-content>
+                  <div class="bio-text">{{ data.bio }}</div>
+                </sky-box-content>
+              </sky-box>
+            </sky-column>
+          }
+        </sky-row>
+        <sky-row>
+          <sky-column [screenSmall]="8" [screenLarge]="6">
+            <app-description-list mode="horizontal">
+              <app-description-list-item term="Created" [description]="data.createdAt | skyDate" />
+              <app-description-list-item
+                term="Last updated"
+                [description]="data.updatedAt | skyDate"
+              />
+            </app-description-list>
+          </sky-column>
+        </sky-row>
+      </sky-fluid-grid>
+    </sky-page-content>
+  </sky-page>
+} @else {
+  <sky-error errorType="notfound" />
+}
