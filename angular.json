@@ -36,9 +36,10 @@
               }
             ],
             "styles": [
-              "src/styles.css",
+              "@skyux/ag-grid/css/sky-ag-grid.css",
               "@skyux/theme/css/sky.css",
-              "@skyux/theme/css/themes/modern/styles.css"
+              "@skyux/theme/css/themes/modern/styles.css",
+              "src/styles.css"
             ],
             "allowedCommonJsDependencies": [
               "@skyux/icons",
