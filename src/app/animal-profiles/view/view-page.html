@@ -1,0 +1,6 @@
+<!-- Avoid a 404 error when the persistence service is not ready -->
+@defer (when !loading()) {
+  <app-view [id]="id() ?? ''" />
+} @placeholder {
+  <sky-wait [isFullPage]="true" />
+}
