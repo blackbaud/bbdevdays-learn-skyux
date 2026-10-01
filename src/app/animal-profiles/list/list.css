@@ -1,0 +1,19 @@
+.image-column {
+  height: var(--ag-row-height);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-column {
+  vertical-align: middle;
+}
+
+.needs-attention-not-starred {
+  visibility: hidden;
+}
+.link-column:hover > .needs-attention-not-starred {
+  opacity: 0.5;
+  visibility: visible;
+}
