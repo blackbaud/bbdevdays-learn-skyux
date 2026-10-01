@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--sky-margin-inline-lg);
+  align-items: center;
+}
+
+.bio-text {
+  white-space: preserve-breaks;
+}
