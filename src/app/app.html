@@ -1,4 +1,7 @@
-<div class="sky-padding-even-md">
-  <app-welcome-to-skyux />
-</div>
+@if (!devMode) {
+  <div class="gh">
+    <a href="https://github.com/blackbaud/bbdevdays-learn-skyux">View on GitHub</a>
+  </div>
+}
+
 <router-outlet />
