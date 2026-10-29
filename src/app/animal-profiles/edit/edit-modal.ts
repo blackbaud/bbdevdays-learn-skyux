@@ -1,9 +1,22 @@
-import { Service } from '@angular/core';
+import { Service, inject } from '@angular/core';
+import { SkyModalService } from '@skyux/modals';
+
+import { ID } from '../../types/id';
+
+import { Edit } from './edit';
 
 @Service()
 export class EditModal {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public edit(_id?: string): void {
-    // todo: implement
+  readonly #modalService = inject(SkyModalService);
+
+  public edit(id?: string): void {
+    this.#modalService.open(Edit, {
+      providers: [
+        {
+          provide: ID,
+          useValue: id ?? '',
+        },
+      ],
+    });
   }
 }
