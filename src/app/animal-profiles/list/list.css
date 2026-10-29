@@ -1,0 +1,15 @@
+.image-column {
+  height: var(--ag-row-height);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.needs-attention-not-starred {
+  opacity: 0;
+}
+.link-column:hover > .needs-attention-not-starred,
+.link-column.needs-attention-not-starred:hover {
+  opacity: 0.5;
+}

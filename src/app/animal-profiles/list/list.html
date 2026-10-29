@@ -1,0 +1,165 @@
+<sky-page layout="fit">
+  <sky-page-header pageTitle="Animal profiles" [parentLink]="parentLink" />
+  <sky-page-content>
+    <sky-data-manager
+      dock="fill"
+      labelText="Animal profiles"
+      settingsKey="list-settings"
+      [sort]="{
+        id: 'name',
+        label: 'Name',
+        descending: false,
+        propertyName: 'name',
+      }"
+      (searchTextChange)="search.set($event)"
+    >
+      <sky-data-manager-toolbar>
+        <sky-data-manager-toolbar-primary-item>
+          <sky-button
+            data-sky-id="new-button"
+            iconName="add"
+            labelText="New"
+            (buttonClick)="onEditClick()"
+          />
+        </sky-data-manager-toolbar-primary-item>
+        <sky-data-manager-toolbar-right-item>
+          <sky-button
+            class="reset-data"
+            data-sky-id="reset-data-button"
+            iconName="delete"
+            labelText="Reset data"
+            (buttonClick)="onReset()"
+          />
+        </sky-data-manager-toolbar-right-item>
+      </sky-data-manager-toolbar>
+      <sky-data-view
+        columnPickerEnabled="true"
+        searchEnabled="true"
+        searchHighlightEnabled="true"
+        viewId="gridView"
+        viewName="Grid view"
+      >
+        <sky-data-grid
+          dock="fill"
+          skyDataManagerViewController
+          [data]="rows()"
+          [selectedRowIds]="selectedIds()"
+          [(rowDeleteIds)]="rowDeleteIds"
+          (rowDeleteConfirm)="rowDeleteConfirm($event)"
+        >
+          <sky-data-grid-column
+            columnId="menu"
+            headingHidden="true"
+            headingText="Context menu"
+            width="60"
+            resizable="false"
+          >
+            <ng-template let-row="row">
+              <sky-dropdown
+                data-sky-id="context-menu"
+                buttonType="context-menu"
+                [label]="row.name + ' context menu'"
+              >
+                <sky-dropdown-menu>
+                  <sky-dropdown-item>
+                    <button
+                      type="button"
+                      (click)="toggleNeedsAttention(row)"
+                      [attr.aria-label]="'Toggle needs-attention for ' + row.name"
+                    >
+                      <sky-icon iconName="star" />
+                      Toggle needs-attention
+                    </button>
+                  </sky-dropdown-item>
+                  <sky-dropdown-item>
+                    <button
+                      type="button"
+                      (click)="onViewClick(row.id, row.name)"
+                      [attr.aria-label]="'View ' + row.name"
+                    >
+                      <sky-icon iconName="open" />
+                      View
+                    </button>
+                  </sky-dropdown-item>
+                  <sky-dropdown-item>
+                    <button
+                      type="button"
+                      (click)="onEditClick(row.id)"
+                      [attr.aria-label]="'Edit ' + row.name"
+                    >
+                      <sky-icon iconName="edit" />
+                      Edit
+                    </button>
+                  </sky-dropdown-item>
+                  <sky-dropdown-item>
+                    <button
+                      type="button"
+                      (click)="onDeleteClick(row.id)"
+                      [attr.aria-label]="'Delete ' + row.name"
+                    >
+                      <sky-icon iconName="delete" />
+                      Delete
+                    </button>
+                  </sky-dropdown-item>
+                </sky-dropdown-menu>
+              </sky-dropdown>
+            </ng-template>
+          </sky-data-grid-column>
+          <sky-data-grid-column
+            columnId="image"
+            headingHidden="true"
+            headingText="Image"
+            width="60"
+            resizable="false"
+          >
+            <ng-template let-row="row">
+              <div class="image-column">
+                <sky-avatar
+                  [name]="row.name"
+                  [src]="(row.images.length && row.images[0].url) || undefined"
+                  size="small"
+                />
+              </div>
+            </ng-template>
+          </sky-data-grid-column>
+          <sky-data-grid-column
+            field="needsAttention"
+            headingHidden="true"
+            headingText="Needs attention?"
+            width="60"
+            resizable="false"
+          >
+            <ng-template let-value="value" let-row="row">
+              <sky-button
+                buttonStyle="link-inline"
+                data-sky-id="needs-attention-cell"
+                iconName="star"
+                [class.needs-attention-not-starred]="!value"
+                [labelHidden]="true"
+                [labelText]="
+                  value
+                    ? `${row.name} needs attention`
+                    : `Click to mark ${row.name} as needing attention`
+                "
+                (buttonClick)="toggleNeedsAttention(row)"
+              />
+            </ng-template>
+          </sky-data-grid-column>
+          <sky-data-grid-column field="name" headingText="Name">
+            <ng-template let-value="value" let-row="row">
+              <sky-button
+                buttonStyle="link-inline"
+                data-sky-id="name-cell"
+                [labelText]="value"
+                (buttonClick)="onViewClick(row.id, row.name)"
+              />
+            </ng-template>
+          </sky-data-grid-column>
+          <sky-data-grid-column field="gender" headingText="Gender" />
+          <sky-data-grid-column field="breed" headingText="Breed" />
+          <sky-data-grid-column field="birthdate" headingText="Birthday" dataType="date" />
+        </sky-data-grid>
+      </sky-data-view>
+    </sky-data-manager>
+  </sky-page-content>
+</sky-page>
