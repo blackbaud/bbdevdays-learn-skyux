@@ -1,0 +1,9 @@
+{
+  "cSpell.enabled": true,
+  "cSpell.words": ["autonumeric", "dbaeumer", "devcontainers", "esbenp", "skyux"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.useFlatConfig": true,
+  "prettier.documentSelectors": ["**/*.{js,ts,jsx,tsx,cjs,cts,mjs,mts,vue,astro,html,json}"],
+  "prettier.requireConfig": true
+}
