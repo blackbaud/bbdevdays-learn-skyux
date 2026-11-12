@@ -1,0 +1,106 @@
+@if (dataOrUndefined(); as data) {
+  <sky-page layout="blocks">
+    <sky-page-header [parentLink]="parentLink" [pageTitle]="data.name">
+      @if (data.needsAttention) {
+        <sky-page-header-alerts>
+          <sky-alert alertType="warning"> This animal needs attention! </sky-alert>
+        </sky-page-header-alerts>
+      }
+      <sky-page-header-avatar>
+        <sky-avatar [name]="data.name" [src]="data.images[0]?.url" />
+      </sky-page-header-avatar>
+      <sky-page-header-actions>
+        @if (linkToView) {
+          <sky-button
+            class="sky-theme-margin-right-l"
+            data-sky-id="view-button"
+            labelText="View"
+            [permalink]="{ route: { commands: ['animal-profiles', 'view', data.id] } }"
+          />
+        } @else {
+          <a routerLink="../.." class="sky-btn sky-btn-default" aria-label="Back to the list">
+            <sky-icon iconName="chevron-left" />
+            Back
+          </a>
+        }
+        <sky-button
+          data-sky-id="edit-button"
+          iconName="edit"
+          labelText="Edit"
+          (buttonClick)="onEditClick(data.id)"
+        />
+      </sky-page-header-actions>
+    </sky-page-header>
+    <sky-page-content>
+      <sky-fluid-grid>
+        <sky-row>
+          <sky-column [screenMedium]="6">
+            <sky-box class="sky-theme-margin-bottom-xl">
+              <sky-box-content>
+                <sky-description-list>
+                  <sky-description-list-content>
+                    <sky-description-list-term>Breed</sky-description-list-term>
+                    <sky-description-list-description>{{
+                      data.breed || 'N/A'
+                    }}</sky-description-list-description>
+                  </sky-description-list-content>
+                  <sky-description-list-content>
+                    <sky-description-list-term>Gender</sky-description-list-term>
+                    <sky-description-list-description>{{
+                      data.gender || 'N/A'
+                    }}</sky-description-list-description>
+                  </sky-description-list-content>
+                  <sky-description-list-content>
+                    <sky-description-list-term>Age</sky-description-list-term>
+                    <sky-description-list-description>{{
+                      data.birthdate | age
+                    }}</sky-description-list-description>
+                  </sky-description-list-content>
+                </sky-description-list>
+              </sky-box-content>
+            </sky-box>
+          </sky-column>
+          @if (data.bio) {
+            <sky-column [screenMedium]="6">
+              <sky-box
+                class="sky-theme-margin-bottom-xl"
+                headingText="Bio"
+                headingLevel="4"
+                headingStyle="4"
+                data-sky-id="bio"
+              >
+                <sky-box-content>
+                  <div class="bio-text">{{ data.bio }}</div>
+                </sky-box-content>
+              </sky-box>
+            </sky-column>
+          }
+        </sky-row>
+        <sky-row>
+          <sky-column [screenSmall]="8" [screenLarge]="6">
+            <sky-box class="sky-theme-margin-bottom-xl">
+              <sky-box-content>
+                <sky-description-list mode="horizontal">
+                  <sky-description-list-content>
+                    <sky-description-list-term>Created</sky-description-list-term>
+                    <sky-description-list-description>{{
+                      data.createdAt | skyDate
+                    }}</sky-description-list-description>
+                  </sky-description-list-content>
+                  <sky-description-list-content>
+                    <sky-description-list-term>Last updated</sky-description-list-term>
+                    <sky-description-list-description>{{
+                      data.updatedAt | skyDate
+                    }}</sky-description-list-description>
+                  </sky-description-list-content>
+                </sky-description-list>
+              </sky-box-content>
+            </sky-box>
+          </sky-column>
+        </sky-row>
+      </sky-fluid-grid>
+    </sky-page-content>
+  </sky-page>
+} @else {
+  <sky-error errorType="notfound" />
+}
