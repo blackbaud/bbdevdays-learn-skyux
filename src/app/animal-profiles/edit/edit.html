@@ -1,0 +1,52 @@
+<form [formGroup]="form" (submit)="saveForm()" class="sky-theme-padding-inset-balanced-m">
+  <sky-modal data-sky-id="edit" [headingText]="title()" [isDirty]="form.dirty">
+    <sky-modal-content>
+      <sky-wait data-sky-id="edit-loading" [isWaiting]="loading()" />
+      <sky-input-box data-sky-id="edit-name" labelText="Name" stacked>
+        <input formControlName="name" spellcheck="false" autocomplete="off" type="text" />
+      </sky-input-box>
+      <sky-checkbox
+        data-sky-id="edit-needsAttention"
+        stacked
+        formControlName="needsAttention"
+        labelText="Needs attention"
+      />
+      <sky-input-box data-sky-id="edit-bio" labelText="Bio" stacked>
+        <textarea formControlName="bio" rows="5"></textarea>
+      </sky-input-box>
+      <sky-input-box data-sky-id="edit-gender" labelText="Gender" stacked>
+        <input formControlName="gender" type="text" />
+      </sky-input-box>
+      <sky-input-box data-sky-id="edit-breed" labelText="Breed" stacked>
+        <input formControlName="breed" type="text" />
+      </sky-input-box>
+      <sky-input-box data-sky-id="edit-birthdate" labelText="Birthdate" stacked>
+        <sky-datepicker>
+          <input
+            formControlName="birthdate"
+            skyDatepickerInput
+            dateFormat="YYYY-MM-DD"
+            [maxDate]="maxDate"
+            type="text"
+          />
+        </sky-datepicker>
+      </sky-input-box>
+    </sky-modal-content>
+    <sky-modal-footer>
+      <sky-button
+        buttonStyle="primary"
+        buttonType="submit"
+        data-sky-id="save-button"
+        labelText="Save"
+        [disabled]="loading()"
+      />
+      <sky-button
+        buttonStyle="link"
+        data-sky-id="cancel-button"
+        labelText="Cancel"
+        [disabled]="loading()"
+        (buttonClick)="cancel()"
+      />
+    </sky-modal-footer>
+  </sky-modal>
+</form>
