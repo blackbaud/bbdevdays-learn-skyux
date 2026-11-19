@@ -3,8 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'animal-profiles/view/a287983e-59ed-46a2-8b38-4c24d0f89143',
+    loadComponent: () => import('./animal-profiles/list/list'),
   },
   {
     path: 'animal-profiles/view/:id',
