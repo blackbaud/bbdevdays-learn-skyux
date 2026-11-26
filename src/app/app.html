@@ -1,4 +1,5 @@
-<div class="sky-padding-even-md">
-  <app-welcome-to-skyux />
-</div>
+@if (showGithubLink()) {
+  <div class="gh"><a href="https://github.com/johnhwhite/bark-back">View on GitHub</a></div>
+}
+
 <router-outlet />
