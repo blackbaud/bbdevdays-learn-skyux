@@ -1,0 +1,5 @@
+<!-- Avoid a 404 error when the persistence service is not ready -->
+<sky-wait [isFullPage]="true" [isWaiting]="loading()" />
+@if (!loading() && id(); as id) {
+  <app-view [id]="id" />
+}
